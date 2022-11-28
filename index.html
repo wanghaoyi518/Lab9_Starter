@@ -102,6 +102,113 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    let log = errorBtns[0];
+    log.addEventListener("click", () => { 
+        console.log('Console Log Demo');
+    });
+    let error = errorBtns[1];
+    error.addEventListener("click", () => { 
+      console.error("Console Error Demo");
+    });
+    let count = errorBtns[2];
+    count.addEventListener("click", () => { 
+      console.count("Count Button");
+    });
+    let warn = errorBtns[3];
+    warn.addEventListener("click", () => { 
+      console.warn('Console Warn Button');
+    });
+    let assert = errorBtns[4];
+    assert.addEventListener("click", () => { 
+      const number = 2;
+      const errorMsg = 'The number does not equal 3';
+      console.assert(number == 3, {number, errorMsg});
+    });
+    let clear = errorBtns[5];
+    clear.addEventListener("click", () => { 
+      console.clear();
+    });
+    let dir = errorBtns[6];
+    dir.addEventListener("click", () => { 
+      console.dir(document.querySelector('#error-btns > button'));
+    });
+    let dirxml = errorBtns[7];
+    dirxml.addEventListener("click", () => { 
+      console.dirxml(errorBtns[7]);
+    });
+    let group = errorBtns[8];
+    group.addEventListener("click", () => { 
+      console.group('console.group');
+    });
+    let groupEnd = errorBtns[9];
+    groupEnd.addEventListener("click", () => { 
+      console.groupEnd();
+    });
+    let tbl = errorBtns[10];
+    var courses = [
+      {
+        name: 'Software Engineering',
+        num: 110,
+      },
+      {
+        name: 'Programming Language',
+        num: 130,
+      },
+      {
+        name: 'Advanced Software Engineering',
+        num: 112,
+      }
+    ];
+    tbl.addEventListener("click", () => { 
+      console.table(courses);
+    });
+    let time = errorBtns[11];
+    time.addEventListener("click", () => { 
+      console.time("Timer Button");
+    });
+    let timeEnd = errorBtns[12];
+    timeEnd.addEventListener("click", () => { 
+      console.timeEnd("Timer Button");
+    });
+    let trace = errorBtns[13];
+    trace.addEventListener("click", (handleBtnClick) => { 
+      const deep = () => { deeper(); };
+      const deeper = () => { deepest(); };
+      const deepest = () => { console.trace(); };
+      deep({name: "handleBtnClick"});
+      // function deep()
+      // {
+      //   function deeper()
+      //   {
+      //     function deepest()
+      //     {
+      //       console.trace("handleBtnClick");
+      //     }
+      //   }
+      // }
+    });
+    let globalError = errorBtns[14];
+    function handleBtnClick() {return boom};
+    globalError.addEventListener("click", () => { 
+      try {
+      console.log("handleBtnClick");
+      // code...
+      //let boom = HTMLButtonElement.handleBtnClick();
+      // boom();
+      //let index = HTMLButtonElement.handleBtnClick.boom;
+      //boom.HTMLButtonElement.handleBtnClick();
+      
+      handleBtnClick();
+      
+      } catch (err) {
+
+      // error handling
+        console.log("Sadly an error happened my friend");
+        console.error(err.message);
+        //console.error(err.name);
+      }
+    });
   </script>
 </body>
 
