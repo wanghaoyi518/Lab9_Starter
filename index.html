@@ -198,10 +198,10 @@
       // }
     });
     let globalError = errorBtns[14];
-    function handleBtnClick() {return boom};
+    function handleBtnClick() {console.log(boom);};
     globalError.addEventListener("click", () => { 
       try {
-      console.log("handleBtnClick");
+      //console.log("handleBtnClick");
       // code...
       //let boom = HTMLButtonElement.handleBtnClick();
       // boom();
@@ -214,10 +214,22 @@
 
       // error handling
         console.log("Sadly an error happened my friend");
-        console.error(err.message);
+        console.log(err);
         //console.error(err.name);
       }
     });
+    // function handleBtnClick(){
+    //   console.log("Sadly an error happened my friend");
+    //   console.log(boom);
+    // }
+    // errorBtns[14].addEventListener('click',handleBtnClick)
+    //   window.addEventListener('error',(event)=>{
+    //     console.log(event);
+    //   })
+    
+
+    
+      
   </script>
   <script>
   TrackJS.track('Testing TrackJS!');
